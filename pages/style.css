@@ -1,0 +1,625 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+body {
+    min-height: 100vh;
+    background: linear-gradient(to right, #e2e2e2, #c9d6ff);
+    color: #333;
+}
+
+/* LOGIN / REGISTER */
+
+body:not(.admin-page) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    margin: 0 15px;
+}
+
+.form-box {
+    width: 100%;
+    max-width: 450px;
+    padding: 30px;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+h2 {
+    font-size: 34px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+input,
+textarea {
+    width: 100%;
+    padding: 13px 15px;
+    background: #eee;
+    border-radius: 10px;
+    border: none;
+    outline: none;
+    font-size: 16px;
+    color: #333;
+    margin-bottom: 18px;
+}
+
+textarea {
+    resize: vertical;
+}
+
+button {
+    width: 100%;
+    padding: 13px;
+    background: #7494ec;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    color: #fff;
+    font-weight: bold;
+    margin-bottom: 20px;
+    transition: 0.3s;
+}
+
+button:hover {
+    background: #5d7fe3;
+}
+
+.switch-form {
+    text-align: center;
+    font-size: 15px;
+}
+
+.switch-form a,
+.links a {
+    color: #7494ec;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.switch-form a:hover,
+.links a:hover {
+    color: #6884d3;
+    text-decoration: underline;
+}
+
+.links {
+    margin-top: 18px;
+    padding-top: 18px;
+    border-top: 1px solid #eee;
+    text-align: center;
+}
+
+.links p {
+    margin: 8px 0;
+    font-size: 15px;
+    color: #666;
+}
+
+/* MESSAGES */
+
+.message,
+.error-message,
+.success-message {
+    width: 100%;
+    padding: 13px;
+    border-radius: 12px;
+    text-align: center;
+    font-weight: bold;
+    margin-bottom: 18px;
+}
+
+.message.success,
+.success-message {
+    background: #d4f8d4;
+    color: #1b7a1b;
+    border: 1px solid #28a745;
+}
+
+.message.error,
+.error-message {
+    background: #ffe4e4;
+    color: #d32f2f;
+    border: 1px solid #dc3545;
+}
+
+/* ADMIN LAYOUT */
+
+.admin-page {
+    min-height: 100vh;
+    width: 100%;
+    background: linear-gradient(to right, #e2e2e2, #c9d6ff);
+    padding: 45px 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.admin-wrapper {
+    max-width: 1150px;
+    width: 100%;
+    margin: 0 auto;
+}
+.admin-card {
+    background: rgba(255,255,255,0.92);
+    border-radius: 22px;
+    padding: 35px;
+    box-shadow: 0 20px 45px rgba(0,0,0,0.12);
+    width: 100%;
+}
+
+.admin-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 28px;
+    gap: 20px;
+}
+
+.admin-top h1 {
+    font-size: 38px;
+    margin-bottom: 8px;
+    color: #222;
+}
+
+.admin-top p {
+    color: #666;
+    font-size: 18px;
+}
+
+/* BUTTON SYSTEM */
+
+.btn,
+.btn-view,
+.btn-edit,
+.btn-delete,
+.back-btn,
+.logout-btn,
+.save-btn,
+.view-btn,
+.edit-btn,
+.delete-btn {
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: 0.25s;
+}
+
+.btn-view,
+.back-btn,
+.logout-btn,
+.view-btn {
+    background: #7494ec;
+    color: #fff;
+}
+
+.btn-edit,
+.edit-btn {
+    background: #28a745;
+    color: #fff;
+}
+
+.btn-delete,
+.delete-btn {
+    background: #ffb8b8;
+    color: #fff;
+}
+
+.btn-view:hover,
+.back-btn:hover,
+.logout-btn:hover,
+.view-btn:hover {
+    background: #5d7fe3;
+}
+
+.btn-edit:hover,
+.edit-btn:hover {
+    background: #218838;
+}
+
+.btn-delete:hover,
+.delete-btn:hover {
+    background: #f59c9c;
+}
+
+/* Admin top logout */
+
+.logout-btn {
+    padding: 16px 26px;
+    border-radius: 12px;
+    font-size: 18px;
+}
+
+/* Small action buttons in table */
+
+.actions {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.actions a,
+.view-btn,
+.edit-btn,
+.delete-btn {
+    padding: 8px 20px;
+    border-radius: 18px;
+    font-size: 14px;
+}
+
+/* Profile action buttons */
+
+.profile-actions {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin: 30px 0;
+    flex-wrap: wrap;
+}
+
+.profile-actions a {
+    min-width: 145px;
+    height: 52px;
+    padding: 0 22px;
+    border-radius: 22px;
+    font-size: 17px;
+    margin: 0;
+}
+
+.profile-actions a:hover {
+    transform: translateY(-2px);
+}
+
+/* Form buttons */
+
+.save-btn {
+    width: 100%;
+    padding: 15px;
+    border-radius: 15px;
+    font-size: 17px;
+    margin-bottom: 18px;
+}
+
+.back-btn {
+    padding: 12px 22px;
+    border-radius: 20px;
+}
+
+/* STATS */
+
+.stats-box {
+    background: linear-gradient(135deg, #7494ec, #9aaeff);
+    color: white;
+    padding: 18px 22px;
+    border-radius: 16px;
+    margin-bottom: 25px;
+    font-weight: bold;
+    box-shadow: 0 10px 25px rgba(116,148,236,0.3);
+    width: 220px;
+    font-size: 18px;
+    text-align: center;
+}
+
+.stats-box span {
+    font-size: 28px;
+}
+
+/* ADMIN TABLE */
+
+.admin-table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0 12px;
+}
+
+.admin-table th {
+    color: #777;
+    text-align: left;
+    padding: 12px 16px;
+    font-size: 14px;
+    text-transform: uppercase;
+}
+
+.admin-table td {
+    background: #f8f9ff;
+    padding: 22px 18px;
+    color: #333;
+}
+
+.admin-table tr td:first-child {
+    border-radius: 14px 0 0 14px;
+    font-weight: bold;
+    color: #7494ec;
+}
+
+.admin-table tr td:last-child {
+    border-radius: 0 14px 14px 0;
+}
+
+.admin-table tr:hover td {
+    background: #dce8ff;
+    transition: 0.25s;
+}
+
+/* USER PROFILE */
+
+.profile-card {
+    max-width: 1000px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.profile-header {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+    background: #f7f8ff;
+    padding: 30px;
+    border-radius: 24px;
+    margin-bottom: 25px;
+}
+.avatar {
+    width: 90px;
+    height: 90px;
+    min-width: 90px;
+    border-radius: 50%;
+    background-color: #7494ec;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: white;
+    font-size: 34px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+.avatar img,
+.profile-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+    display: block;
+}
+
+.profile-header h1 {
+    margin: 0;
+    color: #222;
+    font-size: 38px;
+}
+
+.profile-header p {
+    margin-top: 8px;
+    color: #666;
+    font-size: 18px;
+}
+
+/* PRODUCTS */
+
+.profile-card h2 {
+    text-align: center;
+    font-size: 38px;
+    margin: 35px 0 25px;
+}
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 24px;
+    margin-top: 20px;
+}
+
+.product-card {
+    background: #f7f8ff;
+    padding: 22px;
+    border-radius: 18px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+
+    display: flex;
+    flex-direction: column;
+}
+.product-image {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 14px;
+    margin-bottom: 16px;
+    background: #eee;
+}
+
+.product-card h3 {
+    margin-bottom: 10px;
+    color: #222;
+    font-size: 22px;
+}
+
+.product-card p {
+    color: #666;
+    margin-bottom: 10px;
+    font-size: 17px;
+}
+
+.product-card strong {
+    display: block;
+    margin-bottom: 10px;
+    color: #222;
+    font-size: 19px;
+}
+
+.product-card small {
+    color: #888;
+}
+
+.empty-text {
+    background: #f7f8ff;
+    padding: 20px;
+    border-radius: 15px;
+    text-align: center;
+    color: #666;
+    margin-top: 20px;
+}
+
+/* VIEW / EDIT CARDS */
+
+.user-view-card {
+    max-width: 650px;
+    margin: 0 auto;
+    text-align: left;
+}
+
+.user-info {
+    background: #f7f8ff;
+    padding: 20px;
+    border-radius: 15px;
+    margin-bottom: 20px;
+}
+
+.user-info p {
+    font-size: 17px;
+    margin: 12px 0;
+    color: #333;
+}
+
+/* EDIT PROFILE */
+
+.edit-form {
+    width: 100%;
+}
+
+.edit-form .input-box {
+    margin-bottom: 18px;
+}
+
+.edit-form input,
+.edit-form textarea {
+    width: 100%;
+    padding: 15px 18px;
+    border: none;
+    border-radius: 15px;
+    background: #f4f4f4;
+    font-size: 16px;
+    outline: none;
+    transition: 0.3s;
+}
+
+.edit-form input:focus,
+.edit-form textarea:focus {
+    background: white;
+    box-shadow: 0 0 10px rgba(116,148,236,0.3);
+}
+
+.form-section-title {
+    margin: 25px 0 15px;
+    color: #333;
+    font-size: 20px;
+}
+
+.form-divider {
+    width: 100%;
+    height: 1px;
+    background: #ddd;
+    margin: 25px 0;
+}
+
+.upload-label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: #444;
+}
+
+.edit-form input[type="file"] {
+    cursor: pointer;
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 768px) {
+    .admin-card {
+        padding: 24px;
+    }
+
+    .admin-top,
+    .profile-header {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .admin-top h1,
+    .profile-header h1 {
+        font-size: 30px;
+    }
+
+    .profile-actions {
+        justify-content: center;
+    }
+
+    .profile-actions a {
+        width: 100%;
+    }
+
+    .admin-table {
+        font-size: 14px;
+    }
+
+    .actions {
+        flex-direction: column;
+    }
+}
+.product-actions {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    margin-top: auto;
+    padding-top: 18px;
+}
+
+.product-actions a {
+    width: 100%;
+    height: 46px;
+    padding: 0 !important;
+    margin: 0 !important;
+    border-radius: 23px;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    white-space: nowrap;
+}
+.no-image {
+    width: 100%;
+    height: 180px;
+    border-radius: 14px;
+    background: #eceff5;
+    border: 2px dashed #c9d6ff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #888;
+    margin-bottom: 16px;
+}
+
+.no-image span {
+    font-size: 38px;
+    margin-bottom: 6px;
+}
+
+.no-image p {
+    margin: 0;
+    font-size: 16px;
+    font-weight: bold;
+}
